@@ -1,4 +1,3 @@
 # 2350_project (Clef)
 
-
-Application that tracks/stores Music information from different applications into JSON files, and then adds corresponding songs to a playlist/folder in target application
+Clef is a program/website that helps users transfer playlists from and between their favourite music services
