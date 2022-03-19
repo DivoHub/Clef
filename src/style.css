@@ -1,0 +1,53 @@
+html {
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: #33ff33;
+    padding-bottom: 5px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 30px;
+    padding: 0px;
+}
+
+.service-choose {
+    display: flex;
+    height: 150px;
+}
+
+.sourceService{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.targetService {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.PAO {
+    display: flex;
+    height: 400px;
+}
+
+.playlists-source, .playlists-target {
+    width: 35%;
+    box-sizing: border-box;
+}
+
+.options {
+    width: 30%;
+}
+
+.allOptions {
+    list-style-type: none;
+}
