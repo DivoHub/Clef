@@ -7967,12 +7967,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _ServiceChooser_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ServiceChooser.js */ "./src/ServiceChooser.js");
 /* harmony import */ var _PlaylistsAndOptions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PlaylistsAndOptions.js */ "./src/PlaylistsAndOptions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
 
 var App = function App(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceChooser_js__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PlaylistsAndOptions_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      playlists = _useState2[0],
+      setPlaylists = _useState2[1];
+
+  var handlerPlaylists = function handlerPlaylists(event) {
+    event.preventDefault();
+    setPlaylists(["playlist1", "playlist2", "playlist3", "playlist4"]);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceChooser_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    handlerPlaylists: handlerPlaylists
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PlaylistsAndOptions_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    playlists: playlists
+  }));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -7995,7 +8022,9 @@ __webpack_require__.r(__webpack_exports__);
 var Options = function Options(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("fieldset", {
     className: "options"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Option: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    align: "center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Option: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
     className: "allOptions"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Convert chosen playlist(s)", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "radio",
@@ -8007,7 +8036,7 @@ var Options = function Options(props) {
     value: "Convert-all-playlist"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "start"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Start Convert")))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Start Convert"))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Options);
@@ -8036,7 +8065,9 @@ __webpack_require__.r(__webpack_exports__);
 var PlaylistsAndOptions = function PlaylistsAndOptions(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "PAO"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PlaylistsFromSource_js__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Options_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PlaylistsFromTarget_js__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PlaylistsFromSource_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    playlists: props.playlists
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Options_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PlaylistsFromTarget_js__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PlaylistsAndOptions);
@@ -8056,12 +8087,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
+
 var PlaylistsFromSource = function PlaylistsFromSource(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("fieldset", {
     className: "playlists-source"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "playlistsFromSource"
-  }, "Playlist(s) from source service: "))));
+  }, "Playlist(s) from source service: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, props.playlists.map(function (playlist) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, playlist, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      type: "radio",
+      value: playlist
+    })));
+  })))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PlaylistsFromSource);
@@ -8113,7 +8150,9 @@ __webpack_require__.r(__webpack_exports__);
 var ServiceChooser = function ServiceChooser(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "service-choose"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SourceChooser_js__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TargetChooser_js__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SourceChooser_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    handlerPlaylists: props.handlerPlaylists
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TargetChooser_js__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ServiceChooser);
@@ -8136,16 +8175,49 @@ __webpack_require__.r(__webpack_exports__);
 var SourceChooser = function SourceChooser(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("fieldset", {
     className: "sourceService"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "source"
-  }, "Please choose the source music service: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    className: "sourceForm"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Please choose the source music service: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "login-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "logos"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "images/Spotify_Logo.png",
+    alt: "Spotify"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "radio",
     name: "source",
-    id: "source"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "Apple"
-  }, "Apple Music"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "Spotify"
-  }, "Spotify")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Submit"))));
+    value: "spotify"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "images/Apple_Music_Logo.png",
+    alt: "Apple_Music"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "radio",
+    name: "source",
+    value: "apple-music"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "loginfo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "loginfomation"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "username"
+  }, "Username: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "username",
+    name: "username"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "PIN"
+  }, "PIN: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "pin",
+    name: "pin"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: function onClick(event) {
+      return props.handlerPlaylists(event);
+    }
+  }, "Login"))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SourceChooser);
@@ -8168,16 +8240,45 @@ __webpack_require__.r(__webpack_exports__);
 var TargetChooser = function TargetChooser(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("fieldset", {
     className: "targetService"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-    htmlFor: "source"
-  }, "Please choose the source music service: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    className: "sourceForm"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Please choose the source music service: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "login-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "logos"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "images/Spotify_Logo.png",
+    alt: "Spotify"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "radio",
     name: "source",
-    id: "source"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "Apple"
-  }, "Apple Music"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "Spotify"
-  }, "Spotify")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Submit"))));
+    value: "spotify"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "images/Apple_Music_Logo.png",
+    alt: "Apple_Music"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "radio",
+    name: "source",
+    value: "apple-music"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "loginfo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "loginfomation"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "username"
+  }, "Username: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "username",
+    name: "username"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "PIN"
+  }, "PIN: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "pin",
+    name: "pin"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Login"))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TargetChooser);
@@ -8203,7 +8304,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n    font-family: sans-serif;\n}\n\nheader {\n    text-align: center;\n    background-color: #33ff33;\n    padding-bottom: 5px;\n}\n\n.title {\n    font-size: 50px;\n    font-weight: bold;\n}\n\n.desc {\n    font-size: 30px;\n    padding: 0px;\n}\n\n.service-choose {\n    display: flex;\n    height: 150px;\n}\n\n.sourceService{\n    float: left;\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.targetService {\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.PAO {\n    display: flex;\n    height: 400px;\n}\n\n.playlists-source, .playlists-target {\n    width: 35%;\n    box-sizing: border-box;\n}\n\n.options {\n    width: 30%;\n}\n\n.allOptions {\n    list-style-type: none;\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,uBAAuB;AAC3B;;AAEA;IACI,kBAAkB;IAClB,yBAAyB;IACzB,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,qBAAqB;AACzB","sourcesContent":["html {\n    font-family: sans-serif;\n}\n\nheader {\n    text-align: center;\n    background-color: #33ff33;\n    padding-bottom: 5px;\n}\n\n.title {\n    font-size: 50px;\n    font-weight: bold;\n}\n\n.desc {\n    font-size: 30px;\n    padding: 0px;\n}\n\n.service-choose {\n    display: flex;\n    height: 150px;\n}\n\n.sourceService{\n    float: left;\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.targetService {\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.PAO {\n    display: flex;\n    height: 400px;\n}\n\n.playlists-source, .playlists-target {\n    width: 35%;\n    box-sizing: border-box;\n}\n\n.options {\n    width: 30%;\n}\n\n.allOptions {\n    list-style-type: none;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    font-family: sans-serif;\n    font-size: large;\n}\n\nheader {\n    text-align: center;\n    background-color: #33ff33;\n    padding-bottom: 5px;\n}\n\n.title {\n    font-size: 50px;\n    font-weight: bold;\n}\n\n.desc {\n    font-size: 30px;\n    padding: 0px;\n}\n\n.service-choose {\n    display: flex;\n    height: 250px;\n}\n\n.sourceService{\n    float: left;\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.targetService {\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.PAO {\n    display: flex;\n    height: 400px;\n}\n\n.playlists-source, .playlists-target {\n    width: 35%;\n    box-sizing: border-box;\n}\n\n.options {\n    display: table;\n    text-align: center;\n    width: 30%;\n}\n\nli {\n    list-style-type: none;\n}\n\nimg {\n    height: 50px;\n    width: 150px;\n}\n\n.login-info {\n    display: flex;\n}\n\n.loginfo {\n    height: 100px;\n    margin-left: 20px;\n}\n\n.loginfomation {\n    width: 50%;\n    margin: 0 auto;\n}\n\n.sourceForm {\n    width: 90%;\n    margin: 0 auto;\n}\n\n.button {\n    margin: 45px auto;\n}\n\n.start {\n    display: table-cell;\n    vertical-align: bottom;\n}\n\nbutton {\n    background-color: #e7e7e7;\n    font-size: large;\n    text-align: center;\n    padding: 10px 24px;\n    border-radius: 12px;\n    border: 2px solid #4CAF50;\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,uBAAuB;IACvB,gBAAgB;AACpB;;AAEA;IACI,kBAAkB;IAClB,yBAAyB;IACzB,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,kBAAkB;IAClB,UAAU;AACd;;AAEA;IACI,qBAAqB;AACzB;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,yBAAyB;IACzB,gBAAgB;IAChB,kBAAkB;IAClB,kBAAkB;IAClB,mBAAmB;IACnB,yBAAyB;IACzB,uEAAuE;AAC3E","sourcesContent":["html {\n    font-family: sans-serif;\n    font-size: large;\n}\n\nheader {\n    text-align: center;\n    background-color: #33ff33;\n    padding-bottom: 5px;\n}\n\n.title {\n    font-size: 50px;\n    font-weight: bold;\n}\n\n.desc {\n    font-size: 30px;\n    padding: 0px;\n}\n\n.service-choose {\n    display: flex;\n    height: 250px;\n}\n\n.sourceService{\n    float: left;\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.targetService {\n    width: 50%;\n    box-sizing: border-box;\n}\n\n.PAO {\n    display: flex;\n    height: 400px;\n}\n\n.playlists-source, .playlists-target {\n    width: 35%;\n    box-sizing: border-box;\n}\n\n.options {\n    display: table;\n    text-align: center;\n    width: 30%;\n}\n\nli {\n    list-style-type: none;\n}\n\nimg {\n    height: 50px;\n    width: 150px;\n}\n\n.login-info {\n    display: flex;\n}\n\n.loginfo {\n    height: 100px;\n    margin-left: 20px;\n}\n\n.loginfomation {\n    width: 50%;\n    margin: 0 auto;\n}\n\n.sourceForm {\n    width: 90%;\n    margin: 0 auto;\n}\n\n.button {\n    margin: 45px auto;\n}\n\n.start {\n    display: table-cell;\n    vertical-align: bottom;\n}\n\nbutton {\n    background-color: #e7e7e7;\n    font-size: large;\n    text-align: center;\n    padding: 10px 24px;\n    border-radius: 12px;\n    border: 2px solid #4CAF50;\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

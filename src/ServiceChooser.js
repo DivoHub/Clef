@@ -6,7 +6,7 @@ const ServiceChooser = props=>{
     
     return <>
         <div className="service-choose">
-            <SourceChooser />
+            <SourceChooser handlerPlaylists={props.handlerPlaylists}/>
             <TargetChooser />
         </div>
     </>
