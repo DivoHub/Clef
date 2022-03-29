@@ -1,0 +1,99 @@
+html {
+    font-family: sans-serif;
+    font-size: large;
+}
+
+header {
+    text-align: center;
+    background-color: #33ff33;
+    padding-bottom: 5px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 30px;
+    padding: 0px;
+}
+
+.service-choose {
+    display: flex;
+    height: 250px;
+}
+
+.sourceService{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.targetService {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.PAO {
+    display: flex;
+    height: 400px;
+}
+
+.playlists-source, .playlists-target {
+    width: 35%;
+    box-sizing: border-box;
+}
+
+.options {
+    display: table;
+    text-align: center;
+    width: 30%;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    height: 50px;
+    width: 150px;
+}
+
+.login-info {
+    display: flex;
+}
+
+.loginfo {
+    height: 100px;
+    margin-left: 20px;
+}
+
+.loginfomation {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.sourceForm {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.button {
+    margin: 45px auto;
+}
+
+.start {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+button {
+    background-color: #e7e7e7;
+    font-size: large;
+    text-align: center;
+    padding: 10px 24px;
+    border-radius: 12px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
