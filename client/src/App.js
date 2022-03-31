@@ -7,22 +7,31 @@ import SpotifyLogin from './SpotifyLogin'
 
 const App = props=>{
     
-    const [playlists, setPlaylists] = useState([]);
+    const [playlistsS, setPlaylistsS] = useState([]);
+    const [playlistsT, setPlaylistsT] = useState([]);
     
-    const handlerPlaylists = (event)=>{
+    const handlePlaylistsFromSource = event=>{
         event.preventDefault();
-        setPlaylists(["playlist1", "playlist2", "playlist3", "playlist4"]);
+        setPlaylistsS(["Splaylist1", "Splaylist2", "Splaylist3", "Splaylist4"]);
+    }
+
+    const handlePlaylistsFromTarget = event=>{
+        event.preventDefault();
+        setPlaylistsT(["Tplaylist1", "Tplaylist2", "Tplaylist3", "Tplaylist4"]);
     }
     
     return <>
 
     <header>
-        <div className="title">Clef</div>
-        <p className="desc">Easy way to transfer your playlists between different music services</p>
+        <div className="header">
+            <div className="title">Clef</div>
+            <p className="desc">Easy way to transfer your playlists between different music services</p>
+        </div>
+        
     </header>
         <SpotifyLogin />
-        <ServiceChooser handlerPlaylists={handlerPlaylists}/>
-        <PlaylistsAndOptions playlists={playlists}/>
+        <ServiceChooser handlePlaylistsFromSource={handlePlaylistsFromSource} handlePlaylistsFromTarget={handlePlaylistsFromTarget}/>
+        <PlaylistsAndOptions playlistsS={playlistsS} playlistsT={playlistsT}/>
     </>
 };
 

@@ -7,9 +7,9 @@ const PlaylistsAndOptions = props=>{
     
     return <>
         <div className="PAO">
-            <PlaylistsFromSource playlists={props.playlists}/>
+            <PlaylistsFromSource playlists={props.playlistsS}/>
             <Options />
-            <PlaylistsFromTarget />
+            <PlaylistsFromTarget playlists={props.playlistsT}/>
         </div>
     </>
 };

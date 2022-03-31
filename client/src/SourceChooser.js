@@ -10,7 +10,7 @@ const SourceChooser = props=>{
                 <div className="logos">
                     <ul>
                         <li><img src="images/Spotify_Logo.png" alt="Spotify"/><input type="radio" name="source" value="spotify" /></li>
-                        <li><img src="images/Apple_Music_Logo.png" alt="Apple_Music"/><input type="radio" name="source" value="apple-music" /></li>
+                        <li><img src="images/Deezer_Logo.png" alt="Deezer"/><input type="radio" name="source" value="deezer" /></li>
                     </ul>
                 </div>
                 <div className="loginfo">
@@ -22,7 +22,7 @@ const SourceChooser = props=>{
                     </div>
                 </div>
                 <div className="button">
-                    <button onClick={event=>props.handlerPlaylists(event)}>Login</button>
+                    <button onClick={event=>props.handlePlaylistsFromSource(event)}>Login</button>
                 </div>
             </div>
         </form>
