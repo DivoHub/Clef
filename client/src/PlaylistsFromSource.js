@@ -8,7 +8,7 @@ const PlaylistsFromSource = props=>{
             <form>
                 <label htmlFor="playlistsFromSource">Playlist(s) from source service: </label>
                 <ul>
-                    {props.playlists.map(playlist=><li><label>{playlist}<input type="radio" value={playlist}/></label></li>)}
+                    {props.playlists.map(playlist=><li><label>{playlist}<input type="checkbox" value={playlist}/></label></li>)}
                 </ul>
             </form>
         </fieldset>
