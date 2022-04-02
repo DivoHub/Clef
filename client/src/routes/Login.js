@@ -1,6 +1,8 @@
 import useAuthTokens from "../hooks/useAuthTokens";
 import { useNavigate } from "react-router-dom";
 
+const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : 'http://localhost:5000'
+
 export default function Login() {
   const { spotifyToken, deezerToken } = useAuthTokens();
   const navigate = useNavigate();
@@ -16,9 +18,9 @@ export default function Login() {
   return (
     <div>
       <h2>Login with both spotify and Deezer</h2>
-      <a href='http://localhost:5000/spotify/login'>Login with spotify</a>
+      <a href={`${baseUrl}/spotify/login`}>Login with spotify</a>
       <br />
-      <a href='http://localhost:5000/deezer/login'>Login with Deezer</a>
+      <a href={`${baseUrl}/deezer/login`}>Login with Deezer</a>
       <br />
       <button onClick={handleClick} disabled={isBtnDisabled}>{isBtnDisabled ? 'Login with both spotify and deezer to continue' : 'Lets go'}</button>
     </div>

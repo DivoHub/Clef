@@ -68,7 +68,9 @@ router.get('/spotify/callback', (req, res) => {
         console.log('access_token:', access_token);
         spotifyApi.setAccessToken(access_token);
       }, expires_in / 2 * 1000);
-      res.redirect(`http://localhost:3000/login?spotifyToken=${access_token}`);
+
+      const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : ''
+      res.redirect(`${baseUrl}/login?spotifyToken=${access_token}`);
     })
     .catch(error => {
       console.error('Error getting Tokens:', error);
@@ -94,7 +96,8 @@ router.get('/deezer/callback', async (req, res) => {
         output: 'json',
       }
     });
-    return res.redirect(`http://localhost:3000/login?deezerToken=${resp.data.access_token}`);
+    const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : ''
+    return res.redirect(`${baseUrl}/login?deezerToken=${resp.data.access_token}`);
   } catch (err) {
     return res.status(500).json(err);
   }

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watchAll=false --no-cache --verbose",
     "test-watch": "jest --watchAll --no-cache --verbose",
-    "start": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
