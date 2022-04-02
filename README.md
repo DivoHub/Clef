@@ -35,4 +35,4 @@ Fellow developers are welcome to send pull requests to implement any changes.
 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Tech Stack / Dependencies
-React.js, Express.js, Node.js, Spotify Web API Node, Deezer Public API
+React.js, Express.js, Node.js, Spotify Web API Node, Deezer Public API, Jest
