@@ -18,8 +18,11 @@ Service | Status
 ## Usage
 
 1.User selects streaming services to transfer between
+
 2.User is redirected to an authorization URL to confirm permissions and generate token
+
 3.User selects from a list of playlists and a direction
+
 4.Clef will query target service for songs and then append them into 
 a new playlist
 
