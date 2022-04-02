@@ -9,11 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: client
+        working-directory: server
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
+        filters: |
+          server:
+            - 'server/**'     
         node-version: 17.2.0
         cache: 'npm'
     - run: npm install
