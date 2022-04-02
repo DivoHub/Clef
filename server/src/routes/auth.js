@@ -59,7 +59,6 @@ router.get('/spotify/callback', (req, res) => {
       console.log(
         `Sucessfully retreived access token. Expires in ${expires_in} s.`
       );
-      res.send('Success! You can now close the window.');
 
       setInterval(async () => {
         const data = await spotifyApi.refreshAccessToken();
@@ -69,6 +68,7 @@ router.get('/spotify/callback', (req, res) => {
         console.log('access_token:', access_token);
         spotifyApi.setAccessToken(access_token);
       }, expires_in / 2 * 1000);
+      res.redirect(`http://localhost:3000/login?spotifyToken=${access_token}`);
     })
     .catch(error => {
       console.error('Error getting Tokens:', error);
@@ -94,7 +94,7 @@ router.get('/deezer/callback', async (req, res) => {
         output: 'json',
       }
     });
-    return res.json(resp.data);
+    return res.redirect(`http://localhost:3000/login?deezerToken=${resp.data.access_token}`);
   } catch (err) {
     return res.status(500).json(err);
   }

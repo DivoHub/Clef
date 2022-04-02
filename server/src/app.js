@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 require('express-async-errors');
 const { errorHandler } = require('./utils/utils');
 const authRouter = require('./routes/auth');
@@ -6,6 +7,7 @@ const deezerRouter = require('./routes/deezer');
 const spotifyRouter = require('./routes/spotify');
 
 const app = express();
+app.use(cors());
 
 app.get('/api/ping', (req, res) => {
   return res.json({ ping: 'pong' });

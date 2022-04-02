@@ -1,4 +1,4 @@
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function useAuth(code) {
@@ -19,7 +19,7 @@ export default function useAuth(code) {
             window.location = '/local'
         })
     }, [code])
-    
+console.log (accessToken)    
 return accessToken
 
 }

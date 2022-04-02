@@ -16,6 +16,7 @@ const Options = props=>{
                     <br/>
                     <div className="start">
                         <button>Start Convert</button>
+                        <button onClick={event=>localStorage.clear()}>Log out</button>
                     </div>
                 </div>
             </form>

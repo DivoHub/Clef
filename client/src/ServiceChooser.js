@@ -6,8 +6,8 @@ const ServiceChooser = props=>{
     
     return <>
         <div className="service-choose">
-            <SourceChooser handlerPlaylists={props.handlerPlaylists}/>
-            <TargetChooser />
+            <SourceChooser handlePlaylistsFromSource={props.handlePlaylistsFromSource}/>
+            <TargetChooser handlePlaylistsFromTarget={props.handlePlaylistsFromTarget}/>
         </div>
     </>
     
