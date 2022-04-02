@@ -6,14 +6,10 @@ URL:
 
 ## Supported Services
 
-Deezer
-Spotify
-
-## Services to be Implemented
-
-Apple Music
-Amazon Music
-Youtube Music
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 
 
