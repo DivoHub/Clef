@@ -1,14 +1,62 @@
 html {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: larger;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    width: auto;
+}
+body{
+    position: relative;
+    margin:100px;
+    border: 5px solid #97B844;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 20px 20px 50px grey;
+    background-color: white;
 }
 
 header {
     text-align: center;
-    background-color: #7af08c;
+    background-color: #97B844;
     padding-bottom: 5px;
 }
 
+.welcome{
+    color: #97B844;
+    margin:20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.welcome p {
+    color: black;
+    padding-bottom: 20px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+.welcome img{
+    max-height: 500px;
+    max-width: 500px;
+    width: auto;
+    height: auto;
+}
+footer{
+    text-align: center;
+    padding: 5px;
+}
+footer img{
+    margin-left: 50px;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
 .title {
     font-size: 50px;
     font-weight: bold;

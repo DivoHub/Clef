@@ -1,38 +1,24 @@
-import React from 'react';
-import {useState} from 'react';
-import ServiceChooser from './ServiceChooser.js';
-import PlaylistsAndOptions from './PlaylistsAndOptions.js';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SpotifyLogin from './SpotifyLogin'
+import {
+    Routes,
+    Route,
+} from "react-router-dom";
+import Landing from './routes/landing';
+import Transfer from './routes/transer';
+import Login from './routes/Login';
+import useAuthTokens from './hooks/useAuthTokens'
 
-const App = props=>{
-    
-    const [playlistsS, setPlaylistsS] = useState([]);
-    const [playlistsT, setPlaylistsT] = useState([]);
-    
-    const handlePlaylistsFromSource = event=>{
-        event.preventDefault();
-        setPlaylistsS(["Splaylist1", "Splaylist2", "Splaylist3", "Splaylist4"]);
-    }
+const App = props => {
+    const tokens = useAuthTokens();
+    return (
+        <Routes>
+            <Route path="/" exact element={<Landing />} />
+            <Route path='/login' element={<Login />} />
+            <Route path="/app" element={<Transfer tokens={tokens} />} />
+        </Routes>
+    )
 
-    const handlePlaylistsFromTarget = event=>{
-        event.preventDefault();
-        setPlaylistsT(["Tplaylist1", "Tplaylist2", "Tplaylist3", "Tplaylist4"]);
-    }
-    
-    return <>
-
-    <header>
-        <div className="header">
-            <div className="title">Clef</div>
-            <p className="desc">Easy way to transfer your playlists between different music services</p>
-        </div>
-        
-    </header>
-        <SpotifyLogin />
-        <ServiceChooser handlePlaylistsFromSource={handlePlaylistsFromSource} handlePlaylistsFromTarget={handlePlaylistsFromTarget}/>
-        <PlaylistsAndOptions playlistsS={playlistsS} playlistsT={playlistsT}/>
-    </>
 };
 
 export default App;
