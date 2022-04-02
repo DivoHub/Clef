@@ -1,0 +1,21 @@
+{
+  "name": "clef",
+  "version": "1.0.0",
+  "description": "- `POST /api/transer/from-spotify-to-deezer`",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "cd client && npm install && npm run build && cd ../server && npm install",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DivoHub/Clef.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DivoHub/Clef/issues"
+  },
+  "homepage": "https://github.com/DivoHub/Clef#readme"
+}
