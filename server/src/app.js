@@ -1,38 +1,22 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const spotifyWebApi = require('spotify-web-api-node')
+const express = require('express');
+require('express-async-errors');
+const { errorHandler } = require('./utils/utils');
+const authRouter = require('./routes/auth');
+const deezerRouter = require('./routes/deezer');
+const spotifyRouter = require('./routes/spotify');
 
 const app = express();
-app.use(cors())
-app.use(bodyParser.json())
 
-app.post('/login', (req, res) => {
-    const code = req.body.code
-    const spotifyApi = new spotifyWebApi({
-        redirectUri: 'http://localhost:3000',
-        clientId: 'b26491d4a12f481f9c8cd979e7151646',
-        clientSecret: '0877bb4b043b472f8ff367700b27a08b',
-    })
-
-    spotifyApi.authorizationCodeGrant(code).then(data => {
-        res.json({
-            accessToken: data.body.access_token,
-            refreshToken: data.body.refresh_token,
-            expiresIn: data.body.expires_in
-        })
-    }).catch(err => {
-        console.log(err)
-        res.sendStatus(400)
-    })
+app.get('/api/ping', (req, res) => {
+  return res.json({ ping: 'pong' });
 })
 
-app.listen(3001)
+app.use(authRouter);
+app.use('/api/deezer', deezerRouter);
+app.use('/api/spotify', spotifyRouter);
 
-app.get('/api/ping', (_, res) => {
+app.use(errorHandler)
 
-    res.send({ ping: 'pong' });
-  });
+const port = process.env.PORT || 5000
 
-
-module.exports=app;
+module.exports = app;

@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --no-cache --verbose",
+    "test": "jest --watchAll=false --no-cache --verbose",
+    "test-watch": "jest --watchAll --no-cache --verbose",
     "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
     "body-parser": "^1.19.2",
     "cors": "^2.8.5",
+    "deezer-public-api": "^1.0.4",
     "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "querystring": "^0.2.1",
     "spotify-web-api-node": "^5.0.2"
   },
   "devDependencies": {
