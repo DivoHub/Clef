@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const dzAppId = 534762
 const dzSecretKey = "67bab13be396522522de17ea6cd4b5c5"
-const dzRedirectUri = 'http://localhost:5000/deezer/callback';
+const dzRedirectUri = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000/deezer/callback' : 'https://clefproject.herokuapp.com/deezer/callback';
 
 const scopes = [
     'ugc-image-upload',
