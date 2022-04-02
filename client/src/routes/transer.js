@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : 'https://clefproject.herokuapp.com'
+const baseUrl = process.env.REACT_APP_URL  || 'http://localhost:5000';
 
 export default function Transfer({ tokens }) {
   const [spotifyPls, setSpotifyPls] = useState([]);

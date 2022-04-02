@@ -1,7 +1,7 @@
 import useAuthTokens from "../hooks/useAuthTokens";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : 'http://localhost:5000'
+const baseUrl = process.env.REACT_APP_URL  || 'http://localhost:5000';
 
 export default function Login() {
   const { spotifyToken, deezerToken } = useAuthTokens();
