@@ -20,6 +20,7 @@ const SourceChooser = props=>{
                 <a href={DEE_AUTH_URL} onClick={event=>props.handleSourceService(event, "deezer")}>
                     <img src="images/Deezer_Logo.png" alt="Deezer"/>
                 </a>
+
             </div>
         </form>
         </fieldset>

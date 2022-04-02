@@ -1,0 +1,21 @@
+name: Node CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test_pull:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 17.2.0
+        cache: 'npm'
+    - run: npm install
+#    - run: npm test
+#    - run: npm run build

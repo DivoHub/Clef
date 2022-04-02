@@ -18,6 +18,7 @@ const App = props => {
             <Route path="/app" element={<Transfer tokens={tokens} />} />
         </Routes>
     )
+
 };
 
 export default App;
