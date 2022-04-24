@@ -4,6 +4,11 @@ Clef is a Web Application that helps users transfer playlists between music stre
 
 Link: [Clef](https://clefproject.herokuapp.com/)
 
+## Status
+
+Website is not currently hosted (out of service)
+UI needs major revamp
+
 ## Services
 
 Service | Status
